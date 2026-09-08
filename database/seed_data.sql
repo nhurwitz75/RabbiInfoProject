@@ -14,3 +14,24 @@ VALUES(1, 'Rashi', 'Rav Shlomo Yitzchaki', 1040, 1105, 'France'),
 (13, 'Rashbam', 'Rav Shmuel ben Meir', 1085, 1158, 'France'),
 (14, 'Ralbag', 'Rav Levi ben Gershon', 1288, 1344, 'France'), 
 (15, 'Kli Yakar', 'Rav Shlomo Ephraim ben Aaron Luntschitz', 1550, 1619, 'Poland and Czech Republic');
+
+INSERT INTO works (work_id, division) 
+VALUES (1, 'Tanach and Talmud'),
+(2, 'Torah');
+
+INSERT INTO works (work_id, titles)
+VALUES (3, 'Mishneh Torah and Moreh Nevuchim');
+
+INSERT INTO works (work_id, division)
+VALUES (4, 'Torah and Talmud'),
+(5, 'Torah'),
+(6, 'Tanach'),
+(7, 'Tanach'),
+(8, 'Tanach'),
+(9, 'Tanach'),
+(10, 'Torah and Tehillim'), 
+(11, 'Torah'),
+(12, 'Torah'), 
+(13, 'Torah and Talmud'),
+(14, 'Tanach'),
+(15, 'Torah');
