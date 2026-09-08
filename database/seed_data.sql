@@ -18,10 +18,8 @@ VALUES(1, 'Rashi', 'Rav Shlomo Yitzchaki', 1040, 1105, 'France'),
 INSERT INTO works (work_id, division) 
 VALUES (1, 'Tanach and Talmud'),
 (2, 'Torah');
-
 INSERT INTO works (work_id, titles)
 VALUES (3, 'Mishneh Torah and Moreh Nevuchim');
-
 INSERT INTO works (work_id, division)
 VALUES (4, 'Torah and Talmud'),
 (5, 'Torah'),
@@ -35,3 +33,20 @@ VALUES (4, 'Torah and Talmud'),
 (13, 'Torah and Talmud'),
 (14, 'Tanach'),
 (15, 'Torah');
+
+INSERT INTO RabbiWorks (Rabbi_id, work_id, sefaria_path)
+VALUES (1, 1, 'https://www.sefaria.org/topics/rashi?tab=author-works-on-sefaria'),
+(2, 2, 'https://www.sefaria.org/topics/ibn-ezra?tab=author-works-on-sefaria'),
+(3, 3, 'https://www.sefaria.org/topics/rambam?tab=author-works-on-sefaria'),
+(4, 4, 'https://www.sefaria.org/topics/ramban?tab=author-works-on-sefaria'),
+(5, 5, 'https://www.sefaria.org/topics/shadal?tab=author-works-on-sefaria'),
+(6, 6, 'https://www.sefaria.org/topics/radak?tab=author-works-on-sefaria'),
+(7, 7, 'https://www.sefaria.org/topics/abarbanel?tab=author-works-on-sefaria'),
+(8, 8, 'https://www.sefaria.org/topics/malbim?tab=author-works-on-sefaria'),
+(9, 9, 'https://www.sefaria.org/topics/seforno?tab=author-works-on-sefaria'),
+(10, 10, 'https://www.sefaria.org/topics/alshich?tab=author-works-on-sefaria'),
+(11, 11, 'https://www.sefaria.org/topics/chizkuni?tab=author-works-on-sefaria'),
+(12, 12, 'https://www.sefaria.org/topics/netziv?tab=author-works-on-sefaria'),
+(13, 13, 'https://www.sefaria.org/topics/rashbam?tab=author-works-on-sefaria'),
+(14, 14, 'https://www.sefaria.org/topics/ralbag?tab=author-works-on-sefaria'),
+(15, 15, 'https://www.sefaria.org/topics/kli-yakar?tab=author-works-on-sefaria');
