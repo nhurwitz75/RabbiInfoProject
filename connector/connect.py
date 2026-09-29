@@ -17,14 +17,22 @@ if not os.path.exists('database.db'):
 def home():
 # 2. Connect to your SQL database
 # (Make sure 'database.db' matches your actual database file name/path)
-    conn = sqlite3.connect('schema.sqlite') 
+    conn = sqlite3.connect('database.db') 
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor() 
 
 # 3. Run your SQL query to get all rabbi data
-    cursor.execute("SELECT Rabbi_FullName, Rabbi_YearBorn, Rabbi_YearDied FROM RabbiInfo")
-    cursor.execute("SELECT Rabbi_works FROM works") 
-    cursor.execute("SELECT sefaria_path FROM RabbiWorks") 
+    cursor.execute("""
+        SELECT 
+            r.Rabbi_FullName, 
+            r.Rabbi_YearBorn, 
+            r.Rabbi_YearDied, 
+            w.Rabbi_works, 
+            rw.sefaria_path
+        FROM RabbiInfo r
+        LEFT JOIN works w ON r.id = w.rabbi_id
+        LEFT JOIN RabbiWorks rw ON r.id = rw.rabbi_id
+    """)
     rows = cursor.fetchall()
     conn.close()
 
