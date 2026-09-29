@@ -11,8 +11,7 @@ CREATE TABLE RabbiInfo
 CREATE TABLE Works 
 (
 	work_id int PRIMARY KEY,
-	titles varchar(60),
-	division varchar(60) 
+	Rabbi_works varchar(70) 
 );
 
 CREATE TABLE RabbiWorks

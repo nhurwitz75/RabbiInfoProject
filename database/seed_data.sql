@@ -15,24 +15,23 @@ VALUES(1, 'Rashi', 'Rav Shlomo Yitzchaki', 1040, 1105, 'France'),
 (14, 'Ralbag', 'Rav Levi ben Gershon', 1288, 1344, 'France'), 
 (15, 'Kli Yakar', 'Rav Shlomo Ephraim ben Aaron Luntschitz', 1550, 1619, 'Poland and Czech Republic');
 
-INSERT INTO works (work_id, division) 
-VALUES (1, 'Tanach and Talmud'),
-(2, 'Torah');
-INSERT INTO works (work_id, titles)
-VALUES (3, 'Mishneh Torah and Moreh Nevuchim');
-INSERT INTO works (work_id, division)
-VALUES (4, 'Torah and Talmud'),
-(5, 'Torah'),
-(6, 'Tanach'),
-(7, 'Tanach'),
-(8, 'Tanach'),
-(9, 'Tanach'),
-(10, 'Torah and Tehillim'), 
-(11, 'Torah'),
-(12, 'Torah'), 
-(13, 'Torah and Talmud'),
-(14, 'Tanach'),
-(15, 'Torah');
+INSERT INTO works (work_id, Rabbi_works)
+VALUES 
+(1, 'Commentary on Tanach and Talmud'),
+(2, 'Commentary on Torah'),
+(3, 'Mishneh Torah and Moreh Nevuchim'),
+(4, 'Commentary on Torah and Talmud'),
+(5, 'Commentary on Torah'),
+(6, 'Commentary on Tanach'),
+(7, 'Commentary on Tanach'),
+(8, 'Commentary on Tanach'),
+(9, 'Commentary on Tanach'),
+(10, 'Commentary on Torah and Tehillim'), 
+(11, 'Commentary onTorah'),
+(12, 'Commentary on Torah'), 
+(13, 'Commentary on Torah and Talmud'),
+(14, 'Commentary on Tanach'),
+(15, 'Commentary on Torah');
 
 INSERT INTO RabbiWorks (Rabbi_id, work_id, sefaria_path)
 VALUES (1, 1, 'https://www.sefaria.org/topics/rashi?tab=author-works-on-sefaria'),
