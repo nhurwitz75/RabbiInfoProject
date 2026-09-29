@@ -14,13 +14,15 @@ def home():
     cursor = conn.cursor() 
 
 # 3. Run your SQL query to get all rabbi data
-    cursor.execute("SELECT name, specialty, bio FROM rabbis")
+    cursor.execute("SELECT Rabbi_FullName, Rabbi_YearBorn, Rabbi_YearDied FROM RabbiInfo")
+    cursor.execute("SELECT Rabbi_works FROM works") 
+    cursor.execute("SELECT sefaria_path FROM RabbiWorks") 
     rows = cursor.fetchall()
     conn.close()
 
 # 4. Turn the rows into a dictionary organized by name:
 # e.g., {'Rabbi Smith': {'name': 'Rabbi Smith', 'specialty': '...', 'bio': '...'}}
-    rabbis_dict = {row['name']: row for row in rows}
+    rabbis_dict = {row['Rabbi_FullName']: row for row in rows}
 
 # 5. Send this dictionary straight to your HTML file
     return render_template('index.html', rabbis=rabbis_dict)
