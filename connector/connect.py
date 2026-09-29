@@ -12,14 +12,18 @@ def home():
     conn = sqlite3.connect('schema.sql') 
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor() 
+
 # 3. Run your SQL query to get all rabbi data
     cursor.execute("SELECT name, specialty, bio FROM rabbis")
     rows = cursor.fetchall()
     conn.close()
+
 # 4. Turn the rows into a dictionary organized by name:
 # e.g., {'Rabbi Smith': {'name': 'Rabbi Smith', 'specialty': '...', 'bio': '...'}}
     rabbis_dict = {row['name']: row for row in rows}
+
 # 5. Send this dictionary straight to your HTML file
     return render_template('index.html', rabbis=rabbis_dict)
+
 if __name__ == '__main__':
     app.run(debug=True)
