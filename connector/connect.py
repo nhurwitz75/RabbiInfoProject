@@ -5,11 +5,19 @@ import os
 
 template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../frontend'))
 app = Flask(__name__, template_folder=template_dir)
+
+# Automatically build database.db from schema.sql if it doesn't exist yet
+if not os.path.exists('database.db'):
+    conn = sqlite3.connect('database.db')
+    with open('schema.sql', 'r', encoding='utf-8') as f:
+        conn.executescript(f.read())
+    conn.close()
+
 @app.route('/')
 def home():
 # 2. Connect to your SQL database
 # (Make sure 'database.db' matches your actual database file name/path)
-    conn = sqlite3.connect('schema.sql') 
+    conn = sqlite3.connect('schema.sqlite') 
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor() 
 
