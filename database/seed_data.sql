@@ -1,3 +1,6 @@
+-- Enable foreign key enforcement for the session (recommended)
+PRAGMA foreign_keys = ON;  
+
 INSERT INTO RabbiInfo (Rabbi_id, Rabbi_Acronym, Rabbi_FullName, Rabbi_YearBorn, Rabbi_YearDied, Location)
 VALUES(1, 'Rashi', 'Rav Shlomo Yitzchaki', 1040, 1105, 'France'),
 (2, 'Ibn Ezra', 'Rav Avraham ben Meir Ibn Ezra', 1089, 1167, 'Spain'),
