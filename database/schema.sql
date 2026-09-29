@@ -1,6 +1,3 @@
-CREATE DATABASE Rabbis;
-\CONNECT Rabbis
-
 CREATE TABLE RabbiInfo 
 (
 	Rabbi_id int NOT NULL PRIMARY KEY, 

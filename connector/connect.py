@@ -11,7 +11,7 @@ def home():
 # (Make sure 'database.db' matches your actual database file name/path)
     conn = sqlite3.connect('schema.sqlite')
     conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
+    cursor = conn.cursor() 
 # 3. Run your SQL query to get all rabbi data
     cursor.execute("SELECT name, specialty, bio FROM rabbis")
     rows = cursor.fetchall()
