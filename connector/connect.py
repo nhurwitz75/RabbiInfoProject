@@ -9,7 +9,7 @@ app = Flask(__name__, template_folder=template_dir)
 def home():
 # 2. Connect to your SQL database
 # (Make sure 'database.db' matches your actual database file name/path)
-    conn = sqlite3.connect('schema.sqlite')
+    conn = sqlite3.connect('schema.sql') 
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor() 
 # 3. Run your SQL query to get all rabbi data
