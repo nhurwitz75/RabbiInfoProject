@@ -13,10 +13,14 @@
       <div class="card-container">
         <div class="card" onclick="this.classList.toggle('flipped');">
           <div class="side front">Rashi</div>
-          <div class="side back">
-            <p>Full Name</p>
-            <p>Year Born</p>
-            <p>Year Died</p>
+          {% for name, rabbi in rabbis.items() %}
+            <div class="side back">
+              <p>Full Name: {{ rabbi.Rabbi_FullName }}</p>
+              <p>Year Born: {{ rabbi.Rabbi_YearBorn }}</p>
+              <p>Year Died: {{ rabbi.Rabbi_YearDied }}</p>
+              <p>Sefaria Link: <a href="{{ rabbi.sefaria_path }}" target="_blank">View on Sefaria</a></p>
+            </div>
+          {% endfor %}
           </div>
         </div>
       </div>
