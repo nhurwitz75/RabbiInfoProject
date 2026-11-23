@@ -39,6 +39,7 @@ def home():
     cursor.execute("""
         SELECT 
             r.Rabbi_FullName, 
+            r.Rabbi_Acronym,
             r.Rabbi_YearBorn, 
             r.Rabbi_YearDied, 
             w.Rabbi_works, 
