@@ -13,7 +13,7 @@
       {% for name, rabbi in rabbis.items() %}
         <div class="card-container">
           <div class="card" onclick="this.classList.toggle('flipped');">
-            <div class="side front">{{ name }}</div>
+            <div class="side front">{{ rabbi.Rabbi_Acronym }}</div>
             <div class="side back">
               <p>Full Name: {{ rabbi.Rabbi_FullName }}</p>
               <p>Year Born: {{ rabbi.Rabbi_YearBorn }}</p>
