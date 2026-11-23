@@ -3,21 +3,35 @@ import sqlite3
 import os
 
 
-template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../frontend'))
-app = Flask(__name__, template_folder=template_dir)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FRONT_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'front'))
+DB_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'database'))
+
+DB_PATH = os.path.join(DB_DIR, 'database.db')
+SCHEMA_PATH = os.path.join(DB_DIR, 'schema.sql')
+SEED_PATH = os.path.join(DB_DIR, 'seed_data.sql')
+
+app = Flask(__name__, template_folder=FRONT_DIR, static_folder=FRONT_DIR)
+
+def init_db():
+    conn=sqlite3.connect(DB_PATH)
+    with open(SCHEMA_PATH, 'r', encoding='utf-8') as f:
+        conn.executescript(f.read())
+    if os.path.exists(SEED_PATH):
+        with open(SEED_PATH, 'r', encoding='utf-8') as f:
+            conn.executescript(f.read())
+    conn.commit()
+    conn.close() 
 
 # Automatically build database.db from schema.sql if it doesn't exist yet
-if not os.path.exists('database.db'):
-    conn = sqlite3.connect('database.db')
-    with open('schema.sql', 'r', encoding='utf-8') as f:
-        conn.executescript(f.read())
-    conn.close()
+if not os.path.exists(DB_PATH):
+    init_db() 
 
 @app.route('/')
 def home():
 # 2. Connect to your SQL database
 # (Make sure 'database.db' matches your actual database file name/path)
-    conn = sqlite3.connect('database.db') 
+    conn = sqlite3.connect(DB_PATH)  
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor() 
 
