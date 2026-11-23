@@ -44,8 +44,8 @@ def home():
             w.Rabbi_works, 
             rw.sefaria_path
         FROM RabbiInfo r
-        LEFT JOIN works w ON r.id = w.rabbi_id
-        LEFT JOIN RabbiWorks rw ON r.id = rw.rabbi_id
+        LEFT JOIN works w ON r.Rabbi_id = w.Rabbi_id
+        LEFT JOIN RabbiWorks rw ON r.Rabbi_id = rw.Rabbi_id
     """)
     rows = cursor.fetchall()
     conn.close()
