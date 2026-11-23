@@ -1,0 +1,80 @@
+html, body {
+  height: 100%;
+}
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+h2 {
+  text-align: center;
+}
+p {
+  font-size: 14px;
+}
+.front {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.container {
+  display: grid;
+  height: 85%;
+  gap: 10px;
+  text-align: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+}
+.card-container {
+   height: 180px;
+  -webkit-perspective: 800;
+  -ms-perspective: 800;
+  -moz-perspective: 800;
+  -o-perspective: 800;
+   position: relative;
+}
+.card-container .card.flipped {
+  transform:rotatey(-180deg);
+}
+.card-container .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: 0.5s;
+  -ms-transform-style: preserve-3d;
+  -ms-transition: 0.5s;
+  -o-transform-style: preserve-3d;
+  -o-transition: 0.5s;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  border: 4px solid black;
+}
+.card-container .card .side {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 2;
+  -webkit-backface-visibility: hidden;  /* W3C */
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  overflow: auto;
+}
+.card-container .card .back {
+  background: white;
+  color: black;
+  transform:rotatey(-180deg);
+  font-family: Georgia;
+  text-align: center;
+}
+
+.card-container .card .front {
+  font-family: Georgia;
+  text-align: center;
+  line-height: 140px;
+  background-color: blue;
+  color: white;
+
+}
